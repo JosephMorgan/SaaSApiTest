@@ -1,0 +1,2147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组" enabled="true">
+        <stringProp name="TestPlan.comments">jmeter接口测试Authorization</stringProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">5</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <BeanShellPreProcessor guiclass="TestBeanGUI" testclass="BeanShellPreProcessor" testname="配置文件" enabled="false">
+          <stringProp name="filename"></stringProp>
+          <stringProp name="parameters"></stringProp>
+          <boolProp name="resetInterpreter">false</boolProp>
+          <stringProp name="script">143环境(172.16.20.143)
+登录接口（dengbin 123.com）
+uname	dengbin
+pass	7f292a0d07e94f78f5d234a262557962
+t	1543295636349
+
+公网环境(face.beeboxes.com)
+登录接口(dengbin 123qaZ)
+uname	dengbin
+pass	e0b2660e82b7f97ecca5952f52c2bc14
+t	1543331034724
+换环境要改获取code的正则表达式。
+</stringProp>
+        </BeanShellPreProcessor>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树" enabled="false">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="protocol" elementType="Argument">
+              <stringProp name="Argument.name">protocol</stringProp>
+              <stringProp name="Argument.value">https</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="host" elementType="Argument">
+              <stringProp name="Argument.name">host</stringProp>
+              <stringProp name="Argument.value">face.beeboxes.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <ConfigTestElement guiclass="HttpDefaultsGui" testclass="ConfigTestElement" testname="HTTP请求默认值" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${host}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">${protocol}</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding">utf-8</stringProp>
+          <stringProp name="HTTPSampler.path"></stringProp>
+          <stringProp name="HTTPSampler.concurrentPool">6</stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </ConfigTestElement>
+        <hashTree/>
+        <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie 管理器" enabled="true">
+          <collectionProp name="CookieManager.cookies"/>
+          <boolProp name="CookieManager.clearEachIteration">false</boolProp>
+        </CookieManager>
+        <hashTree/>
+        <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+          <collectionProp name="HeaderManager.headers">
+            <elementProp name="Authorization" elementType="Header">
+              <stringProp name="Header.name">Authorization</stringProp>
+              <stringProp name="Header.value">Bearer ${token}</stringProp>
+            </elementProp>
+          </collectionProp>
+        </HeaderManager>
+        <hashTree/>
+        <OnceOnlyController guiclass="OnceOnlyControllerGui" testclass="OnceOnlyController" testname="登录" enabled="true"/>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="登录接口" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="uname" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">dengbin</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">uname</stringProp>
+                </elementProp>
+                <elementProp name="pass" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">e0b2660e82b7f97ecca5952f52c2bc14</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">pass</stringProp>
+                </elementProp>
+                <elementProp name="t" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">1543331034724</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">t</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/sso/_login</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Host" elementType="Header">
+                  <stringProp name="Header.name">Host</stringProp>
+                  <stringProp name="Header.value">${host}</stringProp>
+                </elementProp>
+                <elementProp name="Connection" elementType="Header">
+                  <stringProp name="Header.name">Connection</stringProp>
+                  <stringProp name="Header.value">keep-alive</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Content-Type" elementType="Header">
+                  <stringProp name="Header.name">Content-Type</stringProp>
+                  <stringProp name="Header.value">application/x-www-form-urlencoded</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">zh-CN,zh;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取code" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="client_id" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">bbox-service</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">client_id</stringProp>
+                </elementProp>
+                <elementProp name="response_type" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">code</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">response_type</stringProp>
+                </elementProp>
+                <elementProp name="redirect_uri" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">https://${host}/#/main</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">redirect_uri</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/oauth2/authorize</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Host" elementType="Header">
+                  <stringProp name="Header.name">Host</stringProp>
+                  <stringProp name="Header.value">${host}</stringProp>
+                </elementProp>
+                <elementProp name="Connection" elementType="Header">
+                  <stringProp name="Header.name">Connection</stringProp>
+                  <stringProp name="Header.value">keep-alive</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">max-age=0</stringProp>
+                </elementProp>
+                <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                  <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                  <stringProp name="Header.value">1</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">zh-CN,zh;q=0.9,en;q=0.8</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+              </collectionProp>
+              <stringProp name="TestPlan.comments">Accept-Encoding	gzip, deflate, br  
+Referer	https://face.beeboxes.com/sso/login.html</stringProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取code" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">URL</stringProp>
+              <stringProp name="RegexExtractor.refname">code</stringProp>
+              <stringProp name="RegexExtractor.regex">https:\/\/face.beeboxes.com\/\?code=(.+)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">fail</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+              <stringProp name="TestPlan.comments"> https://172.16.20.143/?code=c1e3069b-86fd-4b50-8243-d272e0aa9946</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取token" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="code" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">${code}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">code</stringProp>
+                </elementProp>
+                <elementProp name="state" elementType="HTTPArgument">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">https://${host}/#/main</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                  <stringProp name="Argument.name">state</stringProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain"></stringProp>
+            <stringProp name="HTTPSampler.port"></stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/account/check</stringProp>
+            <stringProp name="HTTPSampler.method">GET</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="Host" elementType="Header">
+                  <stringProp name="Header.name">Host</stringProp>
+                  <stringProp name="Header.value">${host}</stringProp>
+                </elementProp>
+                <elementProp name="Connection" elementType="Header">
+                  <stringProp name="Header.name">Connection</stringProp>
+                  <stringProp name="Header.value">keep-alive</stringProp>
+                </elementProp>
+                <elementProp name="Pragma" elementType="Header">
+                  <stringProp name="Header.name">Pragma</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="Accept" elementType="Header">
+                  <stringProp name="Header.name">Accept</stringProp>
+                  <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+                </elementProp>
+                <elementProp name="Cache-Control" elementType="Header">
+                  <stringProp name="Header.name">Cache-Control</stringProp>
+                  <stringProp name="Header.value">no-cache</stringProp>
+                </elementProp>
+                <elementProp name="lang" elementType="Header">
+                  <stringProp name="Header.name">lang</stringProp>
+                  <stringProp name="Header.value">zh-CN</stringProp>
+                </elementProp>
+                <elementProp name="User-Agent" elementType="Header">
+                  <stringProp name="Header.name">User-Agent</stringProp>
+                  <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+                </elementProp>
+                <elementProp name="Referer" elementType="Header">
+                  <stringProp name="Header.name">Referer</stringProp>
+                  <stringProp name="Header.value">https://${host}/index.html?code=${code}</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Encoding" elementType="Header">
+                  <stringProp name="Header.name">Accept-Encoding</stringProp>
+                  <stringProp name="Header.value">gzip, deflate, br</stringProp>
+                </elementProp>
+                <elementProp name="Accept-Language" elementType="Header">
+                  <stringProp name="Header.name">Accept-Language</stringProp>
+                  <stringProp name="Header.value">zh-CN,zh;q=0.9</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取token" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+              <stringProp name="RegexExtractor.refname">token</stringProp>
+              <stringProp name="RegexExtractor.regex">{&quot;access_token&quot;:&quot;(.+)&quot;,&quot;token_type&quot;</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">fail</stringProp>
+              <stringProp name="RegexExtractor.match_number">1</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="租户详情_线程${__threadNum}" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-service/api/account/detail</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value">zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">zh-CN,zh;q=0.9</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="设备列表页" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="page" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">page</stringProp>
+              </elementProp>
+              <elementProp name="size" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">50</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">size</stringProp>
+              </elementProp>
+              <elementProp name="totalElements" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">0</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">totalElements</stringProp>
+              </elementProp>
+              <elementProp name="sort" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">updateTime,desc</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">sort</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-service/api/device/page</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">size每页多少条：10、20、50</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value">zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">zh-CN,zh;q=0.9,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取设备的设置信息" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="用户定义的变量" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-service/api/device/devconfig/C2040018270031</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value">zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">zh-CN,zh;q=0.9,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="修改设备的设置信息" enabled="false">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&#xd;
+    &quot;snList&quot;: [&#xd;
+        &quot;C2040018270031&quot;&#xd;
+    ],&#xd;
+    &quot;deviceIds&quot;: [&#xd;
+        2&#xd;
+    ],&#xd;
+    &quot;objConfig&quot;: {&#xd;
+        &quot;name&quot;: &quot;Setting&quot;,&#xd;
+        &quot;configList&quot;: [&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;about_device&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Device Name&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.deviceName&quot;,&#xd;
+                            &quot;value&quot;: &quot;刘洋你好&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Device Type&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.bbox.devicetype&quot;,&#xd;
+                            &quot;value&quot;: &quot;4001&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;SN&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.setting.deviceSn&quot;,&#xd;
+                            &quot;value&quot;: &quot;C2040018270031&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Software version&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.bbox.sw.version&quot;,&#xd;
+                            &quot;value&quot;: &quot;BFRT_2G_EVT_2.0.2.c.10242112&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Algorithm version&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.algorithmVersion&quot;,&#xd;
+                            &quot;value&quot;: &quot;6.8&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Hardware version&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.bbox.hw.version&quot;,&#xd;
+                            &quot;value&quot;: &quot;E11&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Wireless MAC address&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.bbox.wifimac&quot;,&#xd;
+                            &quot;value&quot;: &quot;4C:E5:AE:00:27:12&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Wired MAC address&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.bbox.ethmac&quot;,&#xd;
+                            &quot;value&quot;: &quot;24:B8:D2:3D:EC:54&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Upper limit of personnel&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;persist.license.maxmember&quot;,&#xd;
+                            &quot;value&quot;: &quot;50000&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Manufacturer&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: true,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;ro.setting.manufacturer&quot;,&#xd;
+                            &quot;value&quot;: &quot;Beijing Beebox Technology Co.,Ltd.&quot;&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;About the device&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;About the device&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;common_setting&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;items&quot;: [&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;Simplified Chinese&quot;,&#xd;
+                                            &quot;value&quot;: &quot;0&quot;&#xd;
+                                        },&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;English&quot;,&#xd;
+                                            &quot;value&quot;: &quot;1&quot;&#xd;
+                                        }&#xd;
+                                    ],&#xd;
+                                    &quot;type&quot;: &quot;SELECT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;System language&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.language&quot;,&#xd;
+                            &quot;value&quot;: &quot;1&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Volume switch&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.isSilent&quot;,&#xd;
+                            &quot;value&quot;: &quot;true&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 15,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Volume&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.voiceNumber&quot;,&#xd;
+                            &quot;value&quot;: &quot;12&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 255,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Screen brightness&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.brightness&quot;,&#xd;
+                            &quot;value&quot;: &quot;102&quot;&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;General setting&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;General setting&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;face_recognize_setting&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Photo quality judgment&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;quality_check&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Quality judgment switch&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.qualityJudgment&quot;,&#xd;
+                                        &quot;value&quot;: &quot;true&quot;&#xd;
+                                    },&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Angle limitation&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.angleLimit&quot;,&#xd;
+                                        &quot;value&quot;: &quot;true&quot;&#xd;
+                                    },&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;max&quot;: 100,&#xd;
+                                                &quot;min&quot;: 0,&#xd;
+                                                &quot;step&quot;: 1,&#xd;
+                                                &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Maximum blur limitation (%)&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.fuzzinessLimit&quot;,&#xd;
+                                        &quot;value&quot;: &quot;100&quot;&#xd;
+                                    },&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;max&quot;: 100,&#xd;
+                                                &quot;min&quot;: 0,&#xd;
+                                                &quot;step&quot;: 1,&#xd;
+                                                &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Sheltering limitation (%)&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.obscuredLimit&quot;,&#xd;
+                                        &quot;value&quot;: &quot;100&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Photo quality judgment&quot;&#xd;
+                            }&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Verification mode&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;verify_mode&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;items&quot;: [&#xd;
+                                                    {&#xd;
+                                                        &quot;name&quot;: &quot;1:1 mode&quot;,&#xd;
+                                                        &quot;value&quot;: &quot;0&quot;&#xd;
+                                                    },&#xd;
+                                                    {&#xd;
+                                                        &quot;name&quot;: &quot;1:N mode&quot;,&#xd;
+                                                        &quot;value&quot;: &quot;1&quot;&#xd;
+                                                    },&#xd;
+                                                    {&#xd;
+                                                        &quot;name&quot;: &quot;Hybrid mode&quot;,&#xd;
+                                                        &quot;value&quot;: &quot;2&quot;&#xd;
+                                                    }&#xd;
+                                                ],&#xd;
+                                                &quot;type&quot;: &quot;RADIO&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Verification mode&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.verificationmode&quot;,&#xd;
+                                        &quot;value&quot;: &quot;2&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Verification mode&quot;&#xd;
+                            }&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Scene mode&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;profiles_select&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;items&quot;: [&#xd;
+                                                    {&#xd;
+                                                        &quot;name&quot;: &quot;Quick scene&quot;,&#xd;
+                                                        &quot;value&quot;: &quot;0&quot;&#xd;
+                                                    },&#xd;
+                                                    {&#xd;
+                                                        &quot;name&quot;: &quot;Safety scene&quot;,&#xd;
+                                                        &quot;value&quot;: &quot;1&quot;&#xd;
+                                                    },&#xd;
+                                                    {&#xd;
+                                                        &quot;name&quot;: &quot;Custom scene&quot;,&#xd;
+                                                        &quot;value&quot;: &quot;2&quot;&#xd;
+                                                    }&#xd;
+                                                ],&#xd;
+                                                &quot;type&quot;: &quot;RADIO&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Scene selection&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.matchlevel&quot;,&#xd;
+                                        &quot;value&quot;: &quot;1&quot;&#xd;
+                                    },&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Parameter setting&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;cumstom_profiles_param_settings&quot;,&#xd;
+                                        &quot;value&quot;: {&#xd;
+                                            &quot;configList&quot;: [&#xd;
+                                                {&#xd;
+                                                    &quot;descriptor&quot;: {&#xd;
+                                                        &quot;ui&quot;: {&#xd;
+                                                            &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                                        },&#xd;
+                                                        &quot;explain&quot;: &quot;Related parameters of living body anti-spoofing&quot;,&#xd;
+                                                        &quot;limit&quot;: 0,&#xd;
+                                                        &quot;readonly&quot;: false,&#xd;
+                                                        &quot;required&quot;: true,&#xd;
+                                                        &quot;unique&quot;: true&#xd;
+                                                    },&#xd;
+                                                    &quot;key&quot;: &quot;live_param&quot;,&#xd;
+                                                    &quot;value&quot;: {&#xd;
+                                                        &quot;configList&quot;: [&#xd;
+                                                            {&#xd;
+                                                                &quot;descriptor&quot;: {&#xd;
+                                                                    &quot;ui&quot;: {&#xd;
+                                                                        &quot;max&quot;: 100,&#xd;
+                                                                        &quot;min&quot;: 0,&#xd;
+                                                                        &quot;step&quot;: 1,&#xd;
+                                                                        &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                                                    },&#xd;
+                                                                    &quot;explain&quot;: &quot;Threshold value of living body detection visible light (%)&quot;,&#xd;
+                                                                    &quot;limit&quot;: 0,&#xd;
+                                                                    &quot;readonly&quot;: false,&#xd;
+                                                                    &quot;required&quot;: true,&#xd;
+                                                                    &quot;unique&quot;: true&#xd;
+                                                                },&#xd;
+                                                                &quot;key&quot;: &quot;bbox.setting.matchThreshold.liveThreshold&quot;,&#xd;
+                                                                &quot;value&quot;: &quot;50&quot;&#xd;
+                                                            },&#xd;
+                                                            {&#xd;
+                                                                &quot;descriptor&quot;: {&#xd;
+                                                                    &quot;ui&quot;: {&#xd;
+                                                                        &quot;max&quot;: 100,&#xd;
+                                                                        &quot;min&quot;: 0,&#xd;
+                                                                        &quot;step&quot;: 1,&#xd;
+                                                                        &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                                                    },&#xd;
+                                                                    &quot;explain&quot;: &quot;Threshold value of living body detection near infrared (%)&quot;,&#xd;
+                                                                    &quot;limit&quot;: 0,&#xd;
+                                                                    &quot;readonly&quot;: false,&#xd;
+                                                                    &quot;required&quot;: true,&#xd;
+                                                                    &quot;unique&quot;: true&#xd;
+                                                                },&#xd;
+                                                                &quot;key&quot;: &quot;bbox.setting.matchThreshold.liveNirthreshold&quot;,&#xd;
+                                                                &quot;value&quot;: &quot;50&quot;&#xd;
+                                                            }&#xd;
+                                                        ],&#xd;
+                                                        &quot;name&quot;: &quot;Related parameters of living body anti-spoofing&quot;&#xd;
+                                                    }&#xd;
+                                                },&#xd;
+                                                {&#xd;
+                                                    &quot;descriptor&quot;: {&#xd;
+                                                        &quot;ui&quot;: {&#xd;
+                                                            &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                                        },&#xd;
+                                                        &quot;explain&quot;: &quot;Related parameters of 1:N recognition comparison&quot;,&#xd;
+                                                        &quot;limit&quot;: 0,&#xd;
+                                                        &quot;readonly&quot;: false,&#xd;
+                                                        &quot;required&quot;: true,&#xd;
+                                                        &quot;unique&quot;: true&#xd;
+                                                    },&#xd;
+                                                    &quot;key&quot;: &quot;recognize_1:N_param&quot;,&#xd;
+                                                    &quot;value&quot;: {&#xd;
+                                                        &quot;configList&quot;: [&#xd;
+                                                            {&#xd;
+                                                                &quot;descriptor&quot;: {&#xd;
+                                                                    &quot;ui&quot;: {&#xd;
+                                                                        &quot;items&quot;: [&#xd;
+                                                                            {&#xd;
+                                                                                &quot;value&quot;: &quot;default&quot;&#xd;
+                                                                            }&#xd;
+                                                                        ],&#xd;
+                                                                        &quot;type&quot;: &quot;SELECT&quot;&#xd;
+                                                                    },&#xd;
+                                                                    &quot;explain&quot;: &quot;Recognition parameter library setting&quot;,&#xd;
+                                                                    &quot;limit&quot;: 0,&#xd;
+                                                                    &quot;readonly&quot;: false,&#xd;
+                                                                    &quot;required&quot;: true,&#xd;
+                                                                    &quot;unique&quot;: true&#xd;
+                                                                },&#xd;
+                                                                &quot;key&quot;: &quot;bbox.setting.recognizeDB.id&quot;,&#xd;
+                                                                &quot;value&quot;: &quot;default&quot;&#xd;
+                                                            },&#xd;
+                                                            {&#xd;
+                                                                &quot;descriptor&quot;: {&#xd;
+                                                                    &quot;ui&quot;: {&#xd;
+                                                                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                                                    },&#xd;
+                                                                    &quot;explain&quot;: &quot;Identification parameter library&quot;,&#xd;
+                                                                    &quot;limit&quot;: 0,&#xd;
+                                                                    &quot;readonly&quot;: false,&#xd;
+                                                                    &quot;required&quot;: true,&#xd;
+                                                                    &quot;unique&quot;: true&#xd;
+                                                                },&#xd;
+                                                                &quot;key&quot;: &quot;recognize_param_db&quot;,&#xd;
+                                                                &quot;value&quot;: {&#xd;
+                                                                    &quot;configList&quot;: [&#xd;
+                                                                        {&#xd;
+                                                                            &quot;descriptor&quot;: {&#xd;
+                                                                                &quot;ui&quot;: {&#xd;
+                                                                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                                                                },&#xd;
+                                                                                &quot;explain&quot;: &quot;default&quot;,&#xd;
+                                                                                &quot;limit&quot;: 0,&#xd;
+                                                                                &quot;readonly&quot;: false,&#xd;
+                                                                                &quot;required&quot;: true,&#xd;
+                                                                                &quot;unique&quot;: true&#xd;
+                                                                            },&#xd;
+                                                                            &quot;key&quot;: &quot;paramDB0&quot;,&#xd;
+                                                                            &quot;value&quot;: {&#xd;
+                                                                                &quot;configList&quot;: [&#xd;
+                                                                                    {&#xd;
+                                                                                        &quot;descriptor&quot;: {&#xd;
+                                                                                            &quot;ui&quot;: {&#xd;
+                                                                                                &quot;max&quot;: 100,&#xd;
+                                                                                                &quot;min&quot;: 0,&#xd;
+                                                                                                &quot;step&quot;: 1,&#xd;
+                                                                                                &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                                                                            },&#xd;
+                                                                                            &quot;explain&quot;: &quot;Threshold value of visible light (%)&quot;,&#xd;
+                                                                                            &quot;limit&quot;: 0,&#xd;
+                                                                                            &quot;readonly&quot;: false,&#xd;
+                                                                                            &quot;required&quot;: true,&#xd;
+                                                                                            &quot;unique&quot;: true&#xd;
+                                                                                        },&#xd;
+                                                                                        &quot;key&quot;: &quot;persist.visibleLight.matchThreshold&quot;,&#xd;
+                                                                                        &quot;value&quot;: &quot;80&quot;&#xd;
+                                                                                    },&#xd;
+                                                                                    {&#xd;
+                                                                                        &quot;descriptor&quot;: {&#xd;
+                                                                                            &quot;ui&quot;: {&#xd;
+                                                                                                &quot;max&quot;: 100,&#xd;
+                                                                                                &quot;min&quot;: 0,&#xd;
+                                                                                                &quot;step&quot;: 1,&#xd;
+                                                                                                &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                                                                            },&#xd;
+                                                                                            &quot;explain&quot;: &quot;Threshold value of near infrared (%)&quot;,&#xd;
+                                                                                            &quot;limit&quot;: 0,&#xd;
+                                                                                            &quot;readonly&quot;: false,&#xd;
+                                                                                            &quot;required&quot;: true,&#xd;
+                                                                                            &quot;unique&quot;: true&#xd;
+                                                                                        },&#xd;
+                                                                                        &quot;key&quot;: &quot;persist.nir.matchThreshold&quot;,&#xd;
+                                                                                        &quot;value&quot;: &quot;0&quot;&#xd;
+                                                                                    }&#xd;
+                                                                                ],&#xd;
+                                                                                &quot;name&quot;: &quot;default&quot;&#xd;
+                                                                            }&#xd;
+                                                                        }&#xd;
+                                                                    ],&#xd;
+                                                                    &quot;name&quot;: &quot;&quot;&#xd;
+                                                                }&#xd;
+                                                            }&#xd;
+                                                        ],&#xd;
+                                                        &quot;name&quot;: &quot;Related parameters of 1:N recognition comparison&quot;&#xd;
+                                                    }&#xd;
+                                                },&#xd;
+                                                {&#xd;
+                                                    &quot;descriptor&quot;: {&#xd;
+                                                        &quot;ui&quot;: {&#xd;
+                                                            &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                                        },&#xd;
+                                                        &quot;explain&quot;: &quot;Related parameters of 1:1 recognition comparison&quot;,&#xd;
+                                                        &quot;limit&quot;: 0,&#xd;
+                                                        &quot;readonly&quot;: false,&#xd;
+                                                        &quot;required&quot;: true,&#xd;
+                                                        &quot;unique&quot;: true&#xd;
+                                                    },&#xd;
+                                                    &quot;key&quot;: &quot;recognize_1:1_param&quot;,&#xd;
+                                                    &quot;value&quot;: {&#xd;
+                                                        &quot;configList&quot;: [&#xd;
+                                                            {&#xd;
+                                                                &quot;descriptor&quot;: {&#xd;
+                                                                    &quot;ui&quot;: {&#xd;
+                                                                        &quot;max&quot;: 100,&#xd;
+                                                                        &quot;min&quot;: 0,&#xd;
+                                                                        &quot;step&quot;: 1,&#xd;
+                                                                        &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                                                    },&#xd;
+                                                                    &quot;explain&quot;: &quot;Threshold value of visible light (%)&quot;,&#xd;
+                                                                    &quot;limit&quot;: 0,&#xd;
+                                                                    &quot;readonly&quot;: false,&#xd;
+                                                                    &quot;required&quot;: true,&#xd;
+                                                                    &quot;unique&quot;: true&#xd;
+                                                                },&#xd;
+                                                                &quot;key&quot;: &quot;bbox.setting.matchThreshold.one.threshold&quot;,&#xd;
+                                                                &quot;value&quot;: &quot;70&quot;&#xd;
+                                                            }&#xd;
+                                                        ],&#xd;
+                                                        &quot;name&quot;: &quot;Related parameters of 1:1 recognition comparison&quot;&#xd;
+                                                    }&#xd;
+                                                }&#xd;
+                                            ],&#xd;
+                                            &quot;name&quot;: &quot;The setting of parameters of face recognition&quot;&#xd;
+                                        }&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Scene selection&quot;&#xd;
+                            }&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Face recognition settings&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;Face recognition settings&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;blacklist&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Local blacklist&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.localBlack&quot;,&#xd;
+                            &quot;value&quot;: &quot;false&quot;&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Blacklist setting&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;Blacklist&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;camera_setting&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 100,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Fundamental brightness of the fill-in light (%)&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.baseLed&quot;,&#xd;
+                            &quot;value&quot;: &quot;3&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 100,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Brightness of the fill-in light in recognition (%)&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.ledValue&quot;,&#xd;
+                            &quot;value&quot;: &quot;10&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 30,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Fill light time in recognition(s)&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.ledTime&quot;,&#xd;
+                            &quot;value&quot;: &quot;3&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 100,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Sensitivity of the recognition of the fill-in light (%)&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.ledSensitivity&quot;,&#xd;
+                            &quot;value&quot;: &quot;80&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 140,&#xd;
+                                    &quot;min&quot;: 30,&#xd;
+                                    &quot;step&quot;: 5,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Minimum face size&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.MinFace&quot;,&#xd;
+                            &quot;value&quot;: &quot;100&quot;&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Camera effect setting&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;Camera effect setting&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;compare_mode&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;QR code passing mode&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.qrTraffic&quot;,&#xd;
+                            &quot;value&quot;: &quot;false&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Double check&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;again_verify&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Local checking&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.local.verify.toggle&quot;,&#xd;
+                                        &quot;value&quot;: &quot;false&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Double check&quot;&#xd;
+                            }&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Fingerprint&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.fingerprint&quot;,&#xd;
+                            &quot;value&quot;: &quot;false&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;items&quot;: [&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;Face or fingerprint&quot;,&#xd;
+                                            &quot;value&quot;: &quot;0&quot;&#xd;
+                                        },&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;Face and fingerprint&quot;,&#xd;
+                                            &quot;value&quot;: &quot;1&quot;&#xd;
+                                        }&#xd;
+                                    ],&#xd;
+                                    &quot;type&quot;: &quot;SELECT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Fingerprint verification&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.fingerprint.verify.mode&quot;,&#xd;
+                            &quot;value&quot;: &quot;0&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;max&quot;: 1000,&#xd;
+                                    &quot;min&quot;: 0,&#xd;
+                                    &quot;step&quot;: 1,&#xd;
+                                    &quot;type&quot;: &quot;SLIDEBAR&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Fingerprint comparison threshold&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.setting.fingerprintThreshold&quot;,&#xd;
+                            &quot;value&quot;: &quot;600&quot;&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Settings of more ways of comparison&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;Settings of more ways of comparison&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;standby_setting&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Standby display information&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;standby_display_info&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Display information in the first line&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.standby.message&quot;,&#xd;
+                                        &quot;value&quot;: &quot;BeeBox welcomes you&quot;&#xd;
+                                    },&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Display information in the second line&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.standby.next.message&quot;,&#xd;
+                                        &quot;value&quot;: &quot;&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Standby display information&quot;&#xd;
+                            }&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Standby wallpaper&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;standby_wallpaper&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Start broadcasting&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.carousel.switch&quot;,&#xd;
+                                        &quot;value&quot;: &quot;true&quot;&#xd;
+                                    },&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Time of each round&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.carousel.time&quot;,&#xd;
+                                        &quot;value&quot;: &quot;20&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Standby wallpaper&quot;&#xd;
+                            }&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Standby video&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;standby_video&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Start broadcasting&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.setting.carousel.switch.video&quot;,&#xd;
+                                        &quot;value&quot;: &quot;true&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;Standby video&quot;&#xd;
+                            }&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Standby page setting&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;Standby page setting&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;system_update&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Upgrade configuration&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;update_setting&quot;,&#xd;
+                            &quot;value&quot;: {&#xd;
+                                &quot;configList&quot;: [&#xd;
+                                    {&#xd;
+                                        &quot;descriptor&quot;: {&#xd;
+                                            &quot;ui&quot;: {&#xd;
+                                                &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                            },&#xd;
+                                            &quot;explain&quot;: &quot;Automatic upgrade&quot;,&#xd;
+                                            &quot;limit&quot;: 0,&#xd;
+                                            &quot;readonly&quot;: false,&#xd;
+                                            &quot;required&quot;: true,&#xd;
+                                            &quot;unique&quot;: true&#xd;
+                                        },&#xd;
+                                        &quot;key&quot;: &quot;bbox.ota.auto.update&quot;,&#xd;
+                                        &quot;value&quot;: &quot;false&quot;&#xd;
+                                    }&#xd;
+                                ],&#xd;
+                                &quot;name&quot;: &quot;System upgrade&quot;&#xd;
+                            }&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Upgrade&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;System upgrade&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            },&#xd;
+            {&#xd;
+                &quot;key&quot;: &quot;data_time_setting&quot;,&#xd;
+                &quot;value&quot;: {&#xd;
+                    &quot;configList&quot;: [&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;items&quot;: [&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;mm-dd&quot;,&#xd;
+                                            &quot;value&quot;: &quot;0&quot;&#xd;
+                                        },&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;mm month dd date&quot;,&#xd;
+                                            &quot;value&quot;: &quot;1&quot;&#xd;
+                                        },&#xd;
+                                        {&#xd;
+                                            &quot;name&quot;: &quot;dd-mm&quot;,&#xd;
+                                            &quot;value&quot;: &quot;2&quot;&#xd;
+                                        }&#xd;
+                                    ],&#xd;
+                                    &quot;type&quot;: &quot;SELECT&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Select the format of date&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.date.format.type&quot;,&#xd;
+                            &quot;value&quot;: &quot;0&quot;&#xd;
+                        },&#xd;
+                        {&#xd;
+                            &quot;descriptor&quot;: {&#xd;
+                                &quot;ui&quot;: {&#xd;
+                                    &quot;type&quot;: &quot;TOGGLE&quot;&#xd;
+                                },&#xd;
+                                &quot;explain&quot;: &quot;Switch of time service synchronization&quot;,&#xd;
+                                &quot;limit&quot;: 0,&#xd;
+                                &quot;readonly&quot;: false,&#xd;
+                                &quot;required&quot;: true,&#xd;
+                                &quot;unique&quot;: true&#xd;
+                            },&#xd;
+                            &quot;key&quot;: &quot;bbox.time.net.sync&quot;,&#xd;
+                            &quot;value&quot;: &quot;true&quot;&#xd;
+                        }&#xd;
+                    ],&#xd;
+                    &quot;name&quot;: &quot;Date time&quot;&#xd;
+                },&#xd;
+                &quot;descriptor&quot;: {&#xd;
+                    &quot;explain&quot;: &quot;Time setting&quot;,&#xd;
+                    &quot;required&quot;: true,&#xd;
+                    &quot;unique&quot;: true,&#xd;
+                    &quot;readonly&quot;: false,&#xd;
+                    &quot;limit&quot;: 0,&#xd;
+                    &quot;ui&quot;: {&#xd;
+                        &quot;type&quot;: &quot;TEXT&quot;&#xd;
+                    }&#xd;
+                }&#xd;
+            }&#xd;
+        ]&#xd;
+    }&#xd;
+}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-service/api/device/devconfig/C2040018270031</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Origin" elementType="Header">
+                <stringProp name="Header.name">Origin</stringProp>
+                <stringProp name="Header.value">https://${host}</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json;charset=UTF-8</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value">zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">zh-CN,zh;q=0.9,en;q=0.8</stringProp>
+              </elementProp>
+            </collectionProp>
+            <stringProp name="TestPlan.comments">Content-Length	14219</stringProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="获取批量导入的requestId" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-batch/api/person/batch/requestId</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value">https://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value">zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value">keep-alive</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="提取requestId" enabled="true">
+            <stringProp name="TestPlan.comments">{&quot;timestamp&quot;:1543311095402,&quot;status&quot;:200,&quot;code&quot;:0,&quot;message&quot;:null,&quot;path&quot;:null,&quot;entity&quot;:&quot;1_1_67b306f74f0e4f84bc2ac2444e497c0f&quot;}</stringProp>
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">requestId</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;entity&quot;:&quot;(.+)&quot;}</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default">fail</stringProp>
+            <stringProp name="RegexExtractor.match_number">1</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="批量添加人员的预览" enabled="false">
+          <elementProp name="HTTPsampler.Files" elementType="HTTPFileArgs">
+            <collectionProp name="HTTPFileArgs.files">
+              <elementProp name="C:/Users/Administrator/Desktop/abc/import1.xlsx" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:/Users/Administrator/Desktop/abc/import1.xlsx</stringProp>
+                <stringProp name="File.paramname">excelFile</stringProp>
+                <stringProp name="File.mimetype">application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</stringProp>
+              </elementProp>
+              <elementProp name="C:/Users/Administrator/Desktop/abc/1.zip" elementType="HTTPFileArg">
+                <stringProp name="File.path">C:/Users/Administrator/Desktop/abc/1.zip</stringProp>
+                <stringProp name="File.paramname">allImage</stringProp>
+                <stringProp name="File.mimetype">application/x-zip-compressed</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="allImage" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value"></stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">allImage</stringProp>
+              </elementProp>
+              <elementProp name="uploadType" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">zip</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">uploadType</stringProp>
+              </elementProp>
+              <elementProp name="requestId" elementType="HTTPArgument">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">${requestId}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                <stringProp name="Argument.name">requestId</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-batch/api/person/batchAddPreview?_r=${__time(,)}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">true</boolProp>
+          <boolProp name="HTTPSampler.BROWSER_COMPATIBLE_MULTIPART">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">application/octet-stream
+?_r=1543244224002</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value"> Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value"> application/json, text/javascript, */*; q=0.01</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value"> zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value"> gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value"> https://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value"> zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="X-Requested-With" elementType="Header">
+                <stringProp name="Header.name">X-Requested-With</stringProp>
+                <stringProp name="Header.value"> XMLHttpRequest</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value"> keep-alive</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value"> no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value"> no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Content-Type" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">multipart/form-data; boundary=---------------------------21005761532684</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="清空批量导入缓存数据" enabled="false">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain"></stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/bbox-batch/api/person/batchAddClear</stringProp>
+          <stringProp name="HTTPSampler.method">DELETE</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP信息头管理器" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Host" elementType="Header">
+                <stringProp name="Header.name">Host</stringProp>
+                <stringProp name="Header.value">${host}</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value"> Mozilla/5.0 (Windows NT 6.1; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value"> application/json, text/plain, */*</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value"> zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value"> gzip, deflate, br</stringProp>
+              </elementProp>
+              <elementProp name="Referer" elementType="Header">
+                <stringProp name="Header.name">Referer</stringProp>
+                <stringProp name="Header.value"> https://${host}/</stringProp>
+              </elementProp>
+              <elementProp name="Authorization" elementType="Header">
+                <stringProp name="Header.name">Authorization</stringProp>
+                <stringProp name="Header.value">Bearer ${token}</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value"> no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value"> no-cache</stringProp>
+              </elementProp>
+              <elementProp name="lang" elementType="Header">
+                <stringProp name="Header.name">lang</stringProp>
+                <stringProp name="Header.value"> zh-CN</stringProp>
+              </elementProp>
+              <elementProp name="Connection" elementType="Header">
+                <stringProp name="Header.name">Connection</stringProp>
+                <stringProp name="Header.value"> keep-alive</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

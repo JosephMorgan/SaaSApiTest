@@ -1,0 +1,14 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Filename,Latency,SampleCount,ErrorCount,Hostname,IdleTime,Connect
+1543333799951,665,登录接口,200,OK,线程组 1-1,text,true,,1957,2519,1,1,https://face.beeboxes.com/index.html,,609,1,0,bin-PC,0,567
+1543333800621,146,获取code,200,OK,线程组 1-1,text,true,,3133,4614,1,1,https://face.beeboxes.com/index.html?code=3e59fbdd-7a18-4dc0-b6ee-845cfbd84151,,27,1,0,bin-PC,0,0
+1543333800778,150,获取token,200,,线程组 1-1,text,true,,720,794,1,1,https://face.beeboxes.com/account/check?code=3e59fbdd-7a18-4dc0-b6ee-845cfbd84151&state=https://face.beeboxes.com/#/main,,149,1,0,bin-PC,0,0
+1543333800932,29,租户详情_线程1,200,,线程组 1-1,text,true,,648,933,1,1,https://face.beeboxes.com/bbox-service/api/account/detail,,28,1,0,bin-PC,0,0
+1543333800963,24,设备列表页,200,,线程组 1-1,text,true,,1853,968,1,1,"https://face.beeboxes.com/bbox-service/api/device/page?page=0&size=50&totalElements=0&sort=updateTime,desc",,24,1,0,bin-PC,0,0
+1543333800990,29,租户详情_线程1,200,,线程组 1-1,text,true,,648,933,1,1,https://face.beeboxes.com/bbox-service/api/account/detail,,25,1,0,bin-PC,0,0
+1543333801021,23,设备列表页,200,,线程组 1-1,text,true,,1860,968,1,1,"https://face.beeboxes.com/bbox-service/api/device/page?page=0&size=50&totalElements=0&sort=updateTime,desc",,22,1,0,bin-PC,0,0
+1543333801047,24,租户详情_线程1,200,,线程组 1-1,text,true,,648,933,1,1,https://face.beeboxes.com/bbox-service/api/account/detail,,24,1,0,bin-PC,0,0
+1543333801073,21,设备列表页,200,,线程组 1-1,text,true,,1853,968,1,1,"https://face.beeboxes.com/bbox-service/api/device/page?page=0&size=50&totalElements=0&sort=updateTime,desc",,20,1,0,bin-PC,0,0
+1543333801095,25,租户详情_线程1,200,,线程组 1-1,text,true,,648,933,1,1,https://face.beeboxes.com/bbox-service/api/account/detail,,24,1,0,bin-PC,0,0
+1543333801121,20,设备列表页,200,,线程组 1-1,text,true,,1853,968,1,1,"https://face.beeboxes.com/bbox-service/api/device/page?page=0&size=50&totalElements=0&sort=updateTime,desc",,20,1,0,bin-PC,0,0
+1543333801142,24,租户详情_线程1,200,,线程组 1-1,text,true,,648,933,1,1,https://face.beeboxes.com/bbox-service/api/account/detail,,24,1,0,bin-PC,0,0
+1543333801168,22,设备列表页,200,,线程组 1-1,text,true,,1860,968,1,1,"https://face.beeboxes.com/bbox-service/api/device/page?page=0&size=50&totalElements=0&sort=updateTime,desc",,22,1,0,bin-PC,0,0

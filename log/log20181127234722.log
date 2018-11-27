@@ -1,0 +1,124 @@
+2018/11/27 23:47:23 INFO  - jmeter.util.JMeterUtils: Setting Locale to zh_CN 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Loading user properties from: D:\JMeter\apache-jmeter-3.1\bin\user.properties 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Loading system properties from: D:\JMeter\apache-jmeter-3.1\bin\system.properties 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Copyright (c) 1998-2016 The Apache Software Foundation 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Version 3.1 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: java.version=1.8.0_25 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: os.name=Windows 7 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: os.arch=amd64 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: os.version=6.1 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: file.encoding=GBK 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Max memory     =1047003136 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Available Processors =8 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Default Locale=中文 (中国) 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: JMeter  Locale=中文 (中国) 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: JMeterHome=D:\JMeter\apache-jmeter-3.1 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: user.dir  =C:\Users\bin\Desktop\SaaSApiTest 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: PWD       =C:\Users\bin\Desktop\SaaSApiTest 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: IP: 192.168.1.35 Name: bin-PC FullName: api.example.com 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: ClassPath 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\bin\ApacheJMeter.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\accessors-smart-1.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ApacheJMeter_slf4j_logkit.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\asm-5.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\avalon-framework-4.1.4.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\bouncycastle.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\bsf-2.4.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\bsh-2.0b5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\bshclient.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\cmdrunner-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\com.google.common_1.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-codec-1.10.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-collections-3.2.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-dbcp2-2.1.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-httpclient-3.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-io-2.5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-jexl-2.1.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-jexl3-3.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-lang3-3.5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-logging-1.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-math3-3.6.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-net-3.5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\commons-pool2-2.4.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\dnsjava-2.1.7.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\excalibur-logger-1.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\freemarker-2.3.23.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\geronimo-jms_1.1_spec-1.1.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\groovy-all-2.4.7.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\hamcrest-core-1.3.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\httpclient-4.5.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\httpcore-4.4.5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\httpmime-4.5.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jcharts-0.7.5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jmeter-plugins-cmn-jmeter-0.4.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jodd-core-3.7.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jodd-lagarto-3.7.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jodd-log-3.7.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jodd-props-3.7.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jorphan.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\json-path-2.2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\json-smart-2.2.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jsoup-1.10.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\jtidy-r938.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\junit-4.12.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\logkit-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\mail-1.5.0-b01.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\mongo-java-driver-2.11.3.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\mysql-connector-java.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\oro-2.0.8.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\perfmon-2.2.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ph-commons-6.2.4.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ph-css-4.1.6.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\rhino-1.7.7.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\rsyntaxtextarea-2.6.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\serializer-2.7.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\slf4j-api-1.7.21.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\tika-core-1.14.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\tika-parsers-1.14.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xalan-2.7.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xercesImpl-2.11.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xml-apis-1.4.01.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xmlgraphics-commons-2.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xmlpull-1.1.3.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xpp3_min-1.1.4c.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\xstream-1.4.9.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\AESEncrypt.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_components.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_core.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_ftp.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_functions.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_http.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_java.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_jdbc.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_jms.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_junit.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_ldap.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_mail.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_mongodb.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_monitors.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_native.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\ApacheJMeter_tcp.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\beanshelleg.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\bouncycastle.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\com.google.common_1.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\commons-codec-1.10.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-autostop-0.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-casutg-2.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-dummy-0.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-ffw-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-fifo-0.2.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-functions-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-graphs-additional-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-graphs-basic-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-graphs-vs-2.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-manager-0.16.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-perfmon-2.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-senseuploader-3.0.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\jmeter-plugins-tst-2.1.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\MD5.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\mqtt-xmeter-jar-with-dependencies.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\RPCRequest.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\ext\test03.jar 
+2018/11/27 23:47:23 DEBUG - jmeter.JMeter: D:\JMeter\apache-jmeter-3.1\lib\junit\test.jar 
+2018/11/27 23:47:23 INFO  - jmeter.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'C:\Users\bin\Desktop\SaaSApiTest\tableReport\output20181127234722' 
